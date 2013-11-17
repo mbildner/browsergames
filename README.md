@@ -24,6 +24,7 @@ The game is loosely built to follow the MVC (model-view-controller) architectura
 The game makes use of three custom *prototypes* (Javascript's rough equivalent to classes), and a few free functions.  The prototypes are:
 
 * **GridBox:**
+
 `var GridBox = function(row, col, width, height){
 	this.row = row;
 	this.col = col;
@@ -84,8 +85,8 @@ There are two related problems to consider fixing.  First, the controller code i
 
 More seriously, the game's multiplayer interaction is handled by each client, which is responsible for sending and receiving updates about player locations, size, and collisions.  
 
-`
-	for (var s in outsideSnakes) {
+
+	`for (var s in outsideSnakes) {
 		var fsnake = outsideSnakes[s];
 
 		fsnake.forEach(function (box) {
@@ -93,8 +94,8 @@ More seriously, the game's multiplayer interaction is handled by each client, wh
 			box.collideable = true;
 			box.render("orange");
 		});
-	}
-`
+	}`
+
 
 This is inherently incorrect, and leads to all kinds of problems. Most obviously, this permits the games to fall out of step with one another in time: a snake that hits a foodblock will only grow in another's screen after it has broadcasted the event, and the local browser has received and processed and applied it.  This means things like collision events may be, and often are, missed. 
 
