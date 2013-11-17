@@ -8,8 +8,8 @@ var context = gameBoard.getContext('2d');
 var width = gameBoard.width;
 var height = gameBoard.height;
 
-var rows = 10;
-var cols = 10;
+var rows = 60;
+var cols = 15;
 
 var boxHeight = height/rows;
 var boxWidth = width/cols;
@@ -145,7 +145,7 @@ function prepBoard () {
 
 
 
-var gravity = 1;
+var gravity = 5;
 
 var block = new Box(1, 1);
 
@@ -207,4 +207,4 @@ window.setInterval(function () {
 
 	block.render("red");
 
-}, 300)
+}, 50)
