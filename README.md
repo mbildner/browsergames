@@ -81,7 +81,7 @@ When a player loses, the game goes into "dead" state, and the user may restart a
 
 ### For Future Consideration:
 
-There are two related problems to consider fixing.  First, the controller code is messy and scattered.  For the most part, it is all managed by the state machine and the gameloop.  But there are little helper functions in various places where they shouldn't be, to ease development.  These should be refactored appropriately into a single controller class, which is itself knowledgeable of both the game model, and the state machine (to manage the playuer's UI).  
+There are two related problems to consider fixing.  First, the controller code is messy and scattered.  For the most part, it is all managed by the state machine and the gameloop.  But there are little helper functions in various places where they shouldn't be, to ease development.  These should be refactored appropriately into a single controller class, which is itself knowledgeable of both the game model, and the state machine (to manage the player's UI).  
 
 More seriously, the game's multiplayer interaction is handled by each client, which is responsible for sending and receiving updates about player locations, size, and collisions.  
 
